@@ -4,7 +4,7 @@
 import sys
 import os
 import urllib
-import simplejson
+import json
 from optparse import OptionParser
 from pprint import pprint
 
@@ -21,7 +21,7 @@ class ElasticSearchClient:
         if self.verbose:
             sys.stderr.write("Fetching %s...\n" % url)
         result = urllib.urlopen(url)
-        return simplejson.load(result)
+        return json.load(result)
 
     @property
     def cluster_health(self):
