@@ -31,12 +31,7 @@ what's what with elastic search.
 
 Nodes have IDs (eg, Su4FER3NTNqwB0W5ywjDRw), but they write log
 messages using odd names (eg, [Whitman, Debra]).  What they do
-not have is hostnames!
-
-NB: there's a good reason for that, you can have more than one
-node per server, but it does make investigating stuff very hard.
-It would be ideal if nodes were identified by a combination of
-hostname and PID...
+not have is hostnames and PIDs!
 
 In the meantime, this makes it a bit easier to get a quick summary
 of nodes:
@@ -48,3 +43,6 @@ of nodes:
      u'bvmvdyVLRHK4mYQThHP7iQ': {u'attributes': {},
                                  u'name': u'Steel Serpent',
                                  u'transport_address': u'inet[/10.32.255.68:9300]'}}
+
+Until I add some more features you can do the rest, mapping whatever you're
+looking at to what you know of your server addresses.
