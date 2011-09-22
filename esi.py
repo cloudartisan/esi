@@ -69,12 +69,12 @@ class ElasticSearchClient:
     @property
     def shards(self):
         if not self.__cache.has_key("shards"):
+            all_shards = []
             indices = self.cluster_state["routing_table"]["indices"]
             for index, shards in indices.items():
                 # Each shard consists of primaries and replicas, pull
                 # them all together into one list called all_shards
                 for shard_primary_replica_map in shards.values():
-                    all_shards = []
                     map(all_shards.extend, shard_primary_replica_map.values())
             self.__cache["shards"] = all_shards
         return self.__cache["shards"]
